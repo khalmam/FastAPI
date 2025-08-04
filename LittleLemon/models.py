@@ -2,6 +2,14 @@ from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from database import Base
 
+
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    password_hash = Column(String)
+
+
 class Menu(Base):
     __tablename__ = "menu_items"
     id = Column(Integer, primary_key=True, index=True)

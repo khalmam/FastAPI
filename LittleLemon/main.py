@@ -3,6 +3,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from database import Base, engine
 from routers import menu, booking, pages
+from routers import auth  #  Import your auth router
+
+
 
 # This line ensures all tables defined in your models are created.
 Base.metadata.create_all(bind=engine)
@@ -20,3 +23,4 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(menu.router)
 app.include_router(booking.router)
 app.include_router(pages.router)
+app.include_router(auth.router)  #  Add this line

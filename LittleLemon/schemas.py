@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from datetime import date
 
 class MenuBase(BaseModel):
-    title: str
+    name: str
     price: int
     description: str | None = None
 
