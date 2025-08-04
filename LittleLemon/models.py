@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-from .database import Base
+from database import Base
 
-class MenuItem(Base):
+class Menu(Base):
     __tablename__ = "menu_items"
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), unique=True, nullable=False)

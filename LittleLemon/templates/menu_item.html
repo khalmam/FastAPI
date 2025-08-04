@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block content %}
+<section>
+   <article>
+      <h1>Menu item</h1>
+      <span>
+         <a href="/">Home</a> /
+         <a href="/menu">Menu</a>/
+         {{menu_item.name}}
+      </span>
+      <div class="row">
+         <div class="column">
+            <h2>
+                {{ menu_item.name }}
+            </h2>
+            <p>
+                {{ menu_item.description }}
+            </p>
+            <p>
+                Price: ${{ menu_item.price }}.00
+            </p>
+         </div>
+         <div class="column">
+            <img src="/static/img/{{menu_item.name}}.jpg" alt="{{ menu_item.name}}" />
+        </div>
+         </div>
+      </article>
+</section>
+{% endblock %}

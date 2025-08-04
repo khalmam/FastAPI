@@ -1,23 +1,23 @@
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import date
 
-class MenuItemBase(BaseModel):
-    name: str
-    description: str
-    price: float
+class MenuBase(BaseModel):
+    title: str
+    price: int
+    description: str | None = None
 
-class MenuItemCreate(MenuItemBase):
+class MenuCreate(MenuBase):
     pass
 
-class MenuItemOut(MenuItemBase):
+class MenuOut(MenuBase):
     id: int
     class Config:
         from_attributes = True
 
 class BookingBase(BaseModel):
     name: str
-    no_of_guests: int
-    booking_date: datetime
+    guests: int
+    date: date
 
 class BookingCreate(BookingBase):
     pass

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <article>
+    <h1>Bookings</h1>
+    <div class="row">
+      <div class="column">
+        <pre id="bookings"></pre>
+      </div>
+      <div class="column">
+        <div class="videowrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.259253703994!2d-73.9877478845946!3d40.75800047932692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258546f5e3e3b%3A0xc3f9a7f9e8d474d2!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2sng!4v1625470000000!5m2!1sen!2sng"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      </div>
+    </article>
+</section>
+
+<!-- <script>
+    // Jinja2's `tojson` filter is used to safely encode the data as a JSON string
+    const bookings = {{ bookings|tojson }};
+
+    console.log(bookings);
+    const pretty_json = JSON.stringify(bookings, null, 2);
+    document.getElementById('bookings').innerHTML = pretty_json;
+</script> -->
+{% endblock %}

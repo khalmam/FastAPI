@@ -1,0 +1,10 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+SQLAlchemy==2.0.30
+pydantic==2.7.1
+python-dotenv==1.0.1
+pymysql==1.1.0
+passlib[bcrypt]==1.7.4   # for password hashing (JWT auth)
+python-jose==3.3.0       # for JWT token handling
+jinja2==3.1.4            # for templates
+alembic==1.13.1          # for DB migrations (optional)
