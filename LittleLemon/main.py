@@ -6,7 +6,7 @@ from routers import menu, booking, pages
 from routers import auth  #  Import your auth router
 
 from fastapi import FastAPI
-from exceptions import validation_exception_handler, http_exception_handler
+from core.exceptions import validation_exception_handler, http_exception_handler
 from fastapi.exceptions import RequestValidationError
 from fastapi import HTTPException
 
