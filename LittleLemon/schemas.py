@@ -1,5 +1,19 @@
 from pydantic import BaseModel
 from datetime import date
+from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = "users"
+    __table_args__ = {"schema": "little_lemon_schema"}
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    password_hash = Column(String)
+    role = Column(String)
 
 class MenuBase(BaseModel):
     name: str

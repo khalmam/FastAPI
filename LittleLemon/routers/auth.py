@@ -10,6 +10,24 @@ from core.utils import hash_password, verify_password
 
 from core.exceptions import ForbiddenException
 
+import os
+from datetime import datetime, timedelta
+from dotenv import load_dotenv # Import load_dotenv
+import jwt
+
+
+
+# Load the environment variables from the .env file
+load_dotenv()
+
+# Get the value from the environment, with a default of 30 if not set.
+# os.getenv() returns a string, so we need to convert it to an integer.
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
+# Get the secret key and algorithm from environment variables
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM", "HS256")
+# OAuth2 scheme for token authentication
+
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
