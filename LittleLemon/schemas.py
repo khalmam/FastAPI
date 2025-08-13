@@ -40,3 +40,7 @@ class BookingOut(BookingBase):
     id: int
     class Config:
         from_attributes = True
+
+
+class MessageOut(BaseModel):
+    message: str
