@@ -1,9 +1,8 @@
-from fastapi import HTTPException, status
+from fastapi import HTTPException, status, Request
 from fastapi.responses import JSONResponse
-from fastapi.requests import Request
 from fastapi.exceptions import RequestValidationError
 
-#  Custom exception classes
+# Custom exception classes
 class UnauthorizedException(HTTPException):
     def __init__(self, detail: str = "Unauthorized"):
         super().__init__(status_code=status.HTTP_401_UNAUTHORIZED, detail=detail)
@@ -16,7 +15,7 @@ class NotFoundException(HTTPException):
     def __init__(self, detail: str = "Resource not found"):
         super().__init__(status_code=status.HTTP_404_NOT_FOUND, detail=detail)
 
-#  Exception handlers for FastAPI
+# Exception handlers
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     return JSONResponse(
         status_code=422,
