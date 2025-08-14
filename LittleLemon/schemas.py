@@ -5,6 +5,16 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
+class RegisterRequest(BaseModel):
+    username: str
+    password: str
+
+class RegisterResponse(BaseModel):
+    message: str
+
+class LoginResponse(BaseModel):
+    access_token: str
+    token_type: str
 
 class User(Base):
     __tablename__ = "users"
